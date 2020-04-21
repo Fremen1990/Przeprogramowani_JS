@@ -26,40 +26,30 @@
  * spełnia tego warunku, funkcja powinna rzucić wyjątek.
  */
 
-function isString(password) { // funkcja sprawdzajaca czy password jest stringiem poprzez znak różności !== jeśli jest prawda typeof różny od string to zwraca "throw new error" na końcu w catch(e)
-  if (typeof password !== "string") {
-    throw new Error(`${password} is not a string`);
-  }
-}
-
 function validatePassword(password) {
-  try { // try wywołuje funkcje z opcja catchowania erroru na końcu funkcji
-    isString(password);
-
-    const hasNumber = /\d/g; // regExp który mówi o digitach w przedziale 0-9
-
-    if (!(password.length > 3 && password.length < 11)) {
-      return false;
-    } else if (
-      !(
-        password.includes("!") ||
-        password.includes("@") ||
-        password.includes("#")
-      )
-    ) {
-      console.log("password should contain !, @ or # ")
-      return false;
-    } else if (!(hasNumber.test(password))) {
-      console.log("password should conrain digit");
-      return false;
-    } else {
-      return true
-    }
-  } catch (e) {
-    console.error(e.message);
+  const hasNumber = /\d/g; // regExp który mówi o digitach w przedziale 0-9
+  if (typeof password !== "string") {
+    console.log(`${password} is not a string`);
     return false;
+  } else if (!(password.length > 3 && password.length < 11)) {
+    return false;
+  } else if (
+    !(
+      password.includes("!") ||
+      password.includes("@") ||
+      password.includes("#")
+    )
+  ) {
+    console.log("password should contain !, @ or # ")
+    return false;
+  } else if (!(hasNumber.test(password))) {
+    console.log("password should contain digit");
+    return false;
+  } else {
+    return true
   }
 }
+
 
 /* Weryfikacja */
 

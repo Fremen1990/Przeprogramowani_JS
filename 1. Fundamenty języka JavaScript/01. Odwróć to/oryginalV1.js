@@ -22,13 +22,13 @@
  */
 
 function reverseMe(input) {
-  if (typeof input === "string") {
+  if (typeof input !== "string") {
+    return alert("wyjatek, input nie jest stringiem");
+  } else {
     const splittedArray = input.split("");
     const reversedSplittedArray = splittedArray.reverse();
     const joinedReversedSplittedArray = reversedSplittedArray.join("");
     return joinedReversedSplittedArray;
-  } else {
-    return alert("wyjatek, input nie jest stringiem");
   }
 }
 

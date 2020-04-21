@@ -26,12 +26,15 @@
  * spełnia tego warunku, funkcja powinna rzucić wyjątek.
  */
 
-
 function validatePassword(password) {
-
-
+    const regex = /(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#]).{3,10}/g;
+    if (typeof password !== "string") {
+        console.log("password is not a string");
+        return false;
+    } else if (!(regex.test(password))) {
+        return false;
+    } else return true;
 }
-
 
 /* Weryfikacja */
 

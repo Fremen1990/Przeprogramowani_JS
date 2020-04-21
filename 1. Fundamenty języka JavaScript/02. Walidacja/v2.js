@@ -28,8 +28,21 @@
 
 
 function validatePassword(password) {
-
-
+    const isNumberInside = /\d/g;
+    if (typeof password !== "string") {
+        console.log("password is not a string");
+        return false;
+    } else if (!(password.length >= 3 && password.length < 11)) {
+        console.log("password should be in range from 3 to 10 charts");
+        return false;
+    } else if (!(password.includes("!") || password.includes("@") || password.includes("#"))) {
+        console.log("password should contain one of special signs: !, @ or #");
+        return false;
+    } else if (!(isNumberInside.test(password))) {
+        console.log("password should contain at least one digit");
+        return false;
+    }
+    return true
 }
 
 
