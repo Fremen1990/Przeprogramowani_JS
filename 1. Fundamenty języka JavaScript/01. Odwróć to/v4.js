@@ -22,9 +22,15 @@
  */
 
 function reverseMe(input) {
-  // tu wpisz swój kod
-
-  return input;
+  if (typeof input !== "string") {
+    try {
+      throw new Error("inpus is not a string")
+    } catch (error) {
+      console.log(error)
+    }
+  } else {
+    return [...input].reverse().join("")
+  }
 }
 
 /* Weryfikacja */

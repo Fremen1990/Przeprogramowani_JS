@@ -22,9 +22,16 @@
  */
 
 function reverseMe(input) {
-  // tu wpisz swój kod
-
-  return input;
+  if (typeof input !== "string") {
+    try {
+      throw new Error("input nie jest stringiem")
+    } catch (error) {
+      console.log(error);
+      return error
+    }
+  } else {
+    return input.split("").reverse().join("");
+  }
 }
 
 /* Weryfikacja */
@@ -39,3 +46,4 @@ verify(reverseMe("a"), "a");
 verify(reverseMe("abc"), "cba");
 verify(reverseMe("Przeprogramowani"), "inawomargorpezrP");
 verify(reverseMe("Brawo!"), "!owarB");
+verify(reverseMe(245246), 642542);

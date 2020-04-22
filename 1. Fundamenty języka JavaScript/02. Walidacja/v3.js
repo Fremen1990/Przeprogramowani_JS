@@ -31,7 +31,7 @@ function validatePassword(password) {
     if (typeof password !== "string") {
         console.log("password is not a string");
         return false;
-    } else if (!(regex.test(password))) {
+    } else if (!regex.test(password)) {
         return false;
     } else return true;
 }

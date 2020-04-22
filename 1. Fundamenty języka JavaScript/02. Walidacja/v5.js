@@ -28,8 +28,15 @@
 
 
 function validatePassword(password) {
-
-
+    if (!(typeof password !== "string")) {
+        try {
+            throw new Error(`${password} is not a string`)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const checkRegex = /(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#]).{3,10}/g.test(password);
+    return checkRegex;
 }
 
 

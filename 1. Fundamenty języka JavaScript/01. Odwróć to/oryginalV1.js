@@ -25,10 +25,13 @@ function reverseMe(input) {
   if (typeof input !== "string") {
     return alert("wyjatek, input nie jest stringiem");
   } else {
-    const splittedArray = input.split("");
-    const reversedSplittedArray = splittedArray.reverse();
-    const joinedReversedSplittedArray = reversedSplittedArray.join("");
-    return joinedReversedSplittedArray;
+    // const splittedArray = input.split("");
+    // const reversedSplittedArray = splittedArray.reverse();
+    // const joinedReversedSplittedArray = reversedSplittedArray.join("");
+    const reversed = input.split("").reverse().join("");
+    console.log(reversed)
+    return reversed
+    // return joinedReversedSplittedArray;
   }
 }
 
