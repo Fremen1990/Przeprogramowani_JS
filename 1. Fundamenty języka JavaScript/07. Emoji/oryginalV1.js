@@ -25,7 +25,12 @@ const emojiMappings = {
 };
 
 function useEmoji(input) {
-  return input;
+  let newInput = input;
+  for (let [word, emoji] of Object.entries(emojiMappings)) {
+    let expression = new RegExp(word, "gi");
+    newInput = newInput.replace(expression, emoji);
+  }
+  return newInput;
 }
 
 /* Weryfikacja */

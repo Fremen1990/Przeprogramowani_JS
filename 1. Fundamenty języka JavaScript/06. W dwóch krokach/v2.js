@@ -31,13 +31,7 @@
  * spełnia tego warunku, funkcja powinna rzucić wyjątek.
  */
 
-function withPrefix(prefix) {
-  if (typeof prefix !== "string") throw new Error("prefix is not a string");
-  const addedPrefix = (name) => {
-    return `${prefix}${name}`;
-  };
-  return addedPrefix;
-}
+function withPrefix(prefix) {}
 
 /* Weryfikacja */
 

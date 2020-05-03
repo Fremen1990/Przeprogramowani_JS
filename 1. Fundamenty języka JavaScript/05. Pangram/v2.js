@@ -26,19 +26,22 @@
  */
 
 function isPangram(sentence) {
-  const regex = /(?=.*a)(?=.*ą)(?=.*b)(?=.*c)(?=.*ć)(?=.*d)(?=.*e)(?=.*ę)(?=.*f)(?=.*g)(?=.*h)(?=.*i)(?=.*j)(?=.*k)(?=.*l)(?=.*m)(?=.*n)(?=.*ń)(?=.*o)(?=.*ó)(?=.*p)(?=.*r)(?=.*s)(?=.*ś)(?=.*t)(?=.*u)(?=.*w)(?=.*y)(?=.*z)(?=.*ź)(?=.*ż)./i;
-  const result = regex.test(sentence);
-  console.log(result);
-
-  const sentenceArray = sentence.split("");
-  const repeatedCharacters = [];
-  sentenceArray.map((char, index) => {
-    if (sentenceArray.indexOf(char) !== index) {
-      repeatedCharacters.push(char);
+  const repeatedCharts = [];
+  const sentenceArray = [...sentence];
+  sentenceArray.map((character, index) => {
+    if (sentenceArray.indexOf(character) !== index) {
+      repeatedCharts.push(character);
     }
   });
-  console.log(`Repeated characters: ${repeatedCharacters}`);
-  return result;
+  console.log(`Repeated characters: ${repeatedCharts}`);
+
+  const alphabet = "aąbcćdeęfghijklłmnńoóprsśtuwyzźż";
+  for (let i = 0; i < alphabet.length; i++) {
+    if (!sentence.toLowerCase().includes(alphabet[i])) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /* Weryfikacja */

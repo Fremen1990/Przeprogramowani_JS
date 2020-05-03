@@ -26,21 +26,24 @@
  */
 
 function isPangram(sentence) {
-  const regex = /(?=.*a)(?=.*ą)(?=.*b)(?=.*c)(?=.*ć)(?=.*d)(?=.*e)(?=.*ę)(?=.*f)(?=.*g)(?=.*h)(?=.*i)(?=.*j)(?=.*k)(?=.*l)(?=.*m)(?=.*n)(?=.*ń)(?=.*o)(?=.*ó)(?=.*p)(?=.*r)(?=.*s)(?=.*ś)(?=.*t)(?=.*u)(?=.*w)(?=.*y)(?=.*z)(?=.*ź)(?=.*ż)./i;
-  const result = regex.test(sentence);
-
-  const repeatedCharts = [];
+  const repeatedCharacters = [];
   const sentenceArray = [...sentence];
 
   sentenceArray.map((character, index) => {
     if (sentenceArray.indexOf(character) !== index) {
-      repeatedCharts.push(character);
+      repeatedCharacters.push(character);
     }
   });
-  console.log(`Repeated characters: ${repeatedCharts}`);
-  return result;
-}
+  console.log(`Repeated characters: ${repeatedCharacters}`);
 
+  const alphabet = "aąbcćdeęfghijklłmnńoóprsśtuwyzźż";
+  for (let i = 0; i < alphabet.length; i++) {
+    if (!sentence.toLowerCase().includes(alphabet[i])) {
+      return false;
+    }
+  }
+  return true;
+}
 /* Weryfikacja */
 
 function verify(input, goal) {

@@ -25,21 +25,7 @@
  * Zweryfikuj, czy konkretna litera występuje w podanym zdaniu tylko jeden raz.
  */
 
-function isPangram(sentence) {
-  const regex = /(?=.*a)(?=.*ą)(?=.*b)(?=.*c)(?=.*ć)(?=.*d)(?=.*e)(?=.*ę)(?=.*f)(?=.*g)(?=.*h)(?=.*i)(?=.*j)(?=.*k)(?=.*l)(?=.*m)(?=.*n)(?=.*ń)(?=.*o)(?=.*ó)(?=.*p)(?=.*r)(?=.*s)(?=.*ś)(?=.*t)(?=.*u)(?=.*w)(?=.*y)(?=.*z)(?=.*ź)(?=.*ż)./i;
-  const result = regex.test(sentence);
-
-  const repeatedCharts = [];
-  const sentenceArray = [...sentence];
-
-  sentenceArray.map((character, index) => {
-    if (sentenceArray.indexOf(character) !== index) {
-      repeatedCharts.push(character);
-    }
-  });
-  console.log(`Repeated characters: ${repeatedCharts}`);
-  return result;
-}
+function isPangram(sentence) {}
 
 /* Weryfikacja */
 
