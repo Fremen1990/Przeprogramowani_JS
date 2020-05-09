@@ -23,8 +23,14 @@
 
 function reverseMe(input) {
   // tu wpisz swój kod
-
-  return input;
+  if (typeof input !== "string") {
+    try {
+      throw new Error("please type in string");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  return [...input].reverse().join("");
 }
 
 /* Weryfikacja */

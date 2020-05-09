@@ -23,10 +23,15 @@
 
 function reverseMe(input) {
   // tu wpisz swój kod
-
-  return input;
+  if (typeof input !== "string") {
+    try {
+      throw new Error("please enter string type");
+    } catch {
+      console.log(error);
+    }
+  }
+  return [...input].reverse().join("");
 }
-
 /* Weryfikacja */
 function verify(input, goal) {
   if (input === goal) {
