@@ -24,14 +24,7 @@ const emojiMappings = {
   budzik: "⏰",
 };
 
-function useEmoji(input) {
-  let newInput = input;
-  for (let [word, emot] of Object.entries(emojiMappings)) {
-    let regexp = new RegExp(word, "gi");
-    newInput = newInput.replace(regexp, emot);
-  }
-  return newInput;
-}
+function useEmoji(input) {}
 
 /* Weryfikacja */
 
