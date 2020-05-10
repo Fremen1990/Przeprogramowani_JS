@@ -26,16 +26,17 @@
  */
 
 function isPangram(sentence) {
-  const alphabet = "aąbcćdeęfghijklłmnńoóprsśtuwyzźż";
-  const sentenceArray = [...sentence];
-  const repeatedCharacters = [];
+  const sentenceConvertedToArray = [...sentence];
+  const repeatedCharts = [];
 
-  sentenceArray.map((character, index) => {
-    if (sentenceArray.indexOf(character) !== index) {
-      repeatedCharacters.push(character);
+  sentenceConvertedToArray.map((characters, index) => {
+    if (sentenceConvertedToArray.indexOf(characters) !== index) {
+      repeatedCharts.push(characters);
     }
   });
-  console.log(`Repeated characters: ${repeatedCharacters}`);
+  console.log(`Repeated characters: ${repeatedCharts}`);
+  const alphabet = "aąbcćdeęfghijklłmnńoóprsśtuwyzźż";
+
   for (let i = 0; i < alphabet.length; i++) {
     if (!sentence.toLowerCase().includes(alphabet[i])) {
       return false;

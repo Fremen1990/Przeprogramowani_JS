@@ -21,7 +21,17 @@
  * applyPredicate(['a', 'b', 'c'], element => ['b', 'c'].includes(element)) // => ['b', 'c']
  */
 
-function applyPredicate(elements, predicate) {}
+function applyPredicate(elements, predicate) {
+  const predicatedArray = [];
+  for (const element of elements) {
+    if (predicate(element)) {
+      predicatedArray.push(element);
+    }
+  }
+  return predicatedArray;
+
+  // return elements.filter(predicate);
+}
 
 /* Weryfikacja */
 

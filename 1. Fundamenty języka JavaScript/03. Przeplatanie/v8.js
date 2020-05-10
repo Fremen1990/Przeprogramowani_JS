@@ -25,22 +25,39 @@
  */
 
 function zipIt(first, second) {
-    //tu wpisz kod
+  if (typeof first && typeof second !== "number") {
+    try {
+      throw new Error("not a number the input stuff");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const firstArray = [...`${first}`];
+  const secondArray = [...`${second}`];
+  let resss = "";
+  for (let i = 0; firstArray[i] || secondArray[i]; i++) {
+    if (firstArray[i]) {
+      resss += firstArray[i];
+    }
+    if (secondArray[i]) {
+      resss += secondArray[i];
+    }
+  }
+  return resss;
 }
-
-
 
 /* Weryfikacja */
 
 function verify(input, goal) {
-    if (input === goal) {
-        console.log('Gratulacje!');
-    } else {
-        console.log(`Niestety, oczekiwano - ${goal}, otrzymano - ${input}`);
-    }
+  if (input === goal) {
+    console.log("Gratulacje!");
+  } else {
+    console.log(`Niestety, oczekiwano - ${goal}, otrzymano - ${input}`);
+  }
 }
 
-verify(zipIt(111, 222), '121212');
-verify(zipIt(123, 456), '142536');
-verify(zipIt(12, 5555), '152555');
-verify(zipIt(12, 5555), '152555');
+verify(zipIt(111, 222), "121212");
+verify(zipIt(123, 456), "142536");
+verify(zipIt(12, 5555), "152555");
+verify(zipIt(12, 5555), "152555");

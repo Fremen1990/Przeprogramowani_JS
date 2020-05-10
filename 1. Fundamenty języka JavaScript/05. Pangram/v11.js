@@ -27,21 +27,6 @@
 
 function isPangram(sentence) {
   const alphabet = "aąbcćdeęfghijklłmnńoóprsśtuwyzźż";
-  const sentenceArray = [...sentence];
-  const repeatedCharacters = [];
-
-  sentenceArray.map((character, index) => {
-    if (sentenceArray.indexOf(character) !== index) {
-      repeatedCharacters.push(character);
-    }
-  });
-  console.log(`Repeated characters: ${repeatedCharacters}`);
-  for (let i = 0; i < alphabet.length; i++) {
-    if (!sentence.toLowerCase().includes(alphabet[i])) {
-      return false;
-    }
-  }
-  return true;
 }
 
 /* Weryfikacja */

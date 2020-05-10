@@ -31,7 +31,16 @@
  * spełnia tego warunku, funkcja powinna rzucić wyjątek.
  */
 
-function withPrefix(prefix) {}
+function withPrefix(prefix) {
+  if (typeof prefix !== "string") {
+    throw new Errror("error mamy tutaj, powinein byc string");
+  }
+
+  const withPrefixAdded = (name) => {
+    return `${prefix}${name}`;
+  };
+  return withPrefixAdded;
+}
 
 /* Weryfikacja */
 
@@ -48,6 +57,7 @@ const course = withPrefix("I ty Opanujesz JavaScript, ");
 try {
   verify(course("Marta"), "I ty Opanujesz JavaScript, Marta");
   verify(course("Janek"), "I ty Opanujesz JavaScript, Janek");
+  verify(course("tomek"), 312415);
 } catch {
   console.log("Niestety :(");
 }

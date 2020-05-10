@@ -26,21 +26,32 @@
  * spełnia tego warunku, funkcja powinna rzucić wyjątek.
  */
 
-
 function validatePassword(password) {
-
-
+  if (!(password.length > 3 && password.length < 11)) {
+    return false;
+  } else if (
+    !(
+      password.includes("!") ||
+      password.includes("@") ||
+      password.includes("#")
+    )
+  ) {
+    return false;
+  } else if (!/\d/g.test(password)) {
+    return false;
+  } else {
+    return true;
+  }
 }
-
 
 /* Weryfikacja */
 
 function verify(input, goal) {
-    if (input === goal) {
-        console.log("Gratulacje!");
-    } else {
-        console.log(`Niestety, oczekiwano - ${goal}, otrzymano - ${input}`);
-    }
+  if (input === goal) {
+    console.log("Gratulacje!");
+  } else {
+    console.log(`Niestety, oczekiwano - ${goal}, otrzymano - ${input}`);
+  }
 }
 verify(validatePassword(""), false);
 verify(validatePassword("lol"), false);

@@ -54,6 +54,7 @@ const course = withPrefix("I ty Opanujesz JavaScript, ");
 try {
   verify(course("Marta"), "I ty Opanujesz JavaScript, Marta");
   verify(course("Janek"), "I ty Opanujesz JavaScript, Janek");
+  verify(course("Janek"), 564156);
 } catch {
   console.log("Niestety :(");
 }

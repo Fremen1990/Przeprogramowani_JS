@@ -26,24 +26,42 @@
  * spełnia tego warunku, funkcja powinna rzucić wyjątek.
  */
 
-
 function validatePassword(password) {
-
-
+  console.log(/\d/g.test(password));
+  if (typeof password !== "string") {
+    try {
+      throw new Error("not a string");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  if (!(password.length > 3 && password.length < 11)) {
+    return false;
+  } else if (
+    !(
+      password.includes("!") ||
+      password.includes("@") ||
+      password.includes("#")
+    )
+  ) {
+    return false;
+  } else if (!/\d/g.test(password)) {
+    return false;
+  } else return true;
 }
-
 
 /* Weryfikacja */
 
 function verify(input, goal) {
-    if (input === goal) {
-        console.log("Gratulacje!");
-    } else {
-        console.log(`Niestety, oczekiwano - ${goal}, otrzymano - ${input}`);
-    }
+  if (input === goal) {
+    console.log("Gratulacje!");
+  } else {
+    console.log(`Niestety, oczekiwano - ${goal}, otrzymano - ${input}`);
+  }
 }
 verify(validatePassword(""), false);
 verify(validatePassword("lol"), false);
 verify(validatePassword("lolsdfndfsn"), false);
+verify(validatePassword("lolsdf141"), false);
 verify(validatePassword("ToDziala1#"), true);
 verify(validatePassword(12345), false);

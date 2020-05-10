@@ -25,22 +25,32 @@
  */
 
 function zipIt(first, second) {
-    //tu wpisz kod
+  const firstArray = [...`${first}`];
+  const secondArray = [...`${second}`];
+  //   console.log(firstArray);
+  let zipped = "";
+  for (let i = 0; firstArray[i] || secondArray[i]; i++) {
+    if (firstArray[i]) {
+      zipped += firstArray[i];
+    }
+    if (secondArray[i]) {
+      zipped += secondArray[i];
+    }
+  }
+  return zipped;
 }
-
-
 
 /* Weryfikacja */
 
 function verify(input, goal) {
-    if (input === goal) {
-        console.log('Gratulacje!');
-    } else {
-        console.log(`Niestety, oczekiwano - ${goal}, otrzymano - ${input}`);
-    }
+  if (input === goal) {
+    console.log("Gratulacje!");
+  } else {
+    console.log(`Niestety, oczekiwano - ${goal}, otrzymano - ${input}`);
+  }
 }
 
-verify(zipIt(111, 222), '121212');
-verify(zipIt(123, 456), '142536');
-verify(zipIt(12, 5555), '152555');
-verify(zipIt(12, 5555), '152555');
+verify(zipIt(111, 222), "121212");
+verify(zipIt(123, 456), "142536");
+verify(zipIt(12, 5555), "152555");
+verify(zipIt(12, 5555), "152555");

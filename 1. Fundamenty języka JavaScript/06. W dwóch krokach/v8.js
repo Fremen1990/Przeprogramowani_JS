@@ -31,12 +31,7 @@
  * spełnia tego warunku, funkcja powinna rzucić wyjątek.
  */
 
-function withPrefix(prefix) {
-  const prefixAdded = (name) => {
-    return `${prefix}${name}`;
-  };
-  return prefixAdded;
-}
+function withPrefix(prefix) {}
 
 /* Weryfikacja */
 

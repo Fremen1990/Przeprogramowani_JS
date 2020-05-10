@@ -25,7 +25,26 @@
  * Zweryfikuj, czy konkretna litera występuje w podanym zdaniu tylko jeden raz.
  */
 
-function isPangram(sentence) {}
+function isPangram(sentence) {
+  const sentenceArray = [...sentence];
+  const repeatedChartsArray = [];
+  sentenceArray.map((char, index) => {
+    if (sentenceArray.indexOf(char) !== index) {
+      repeatedChartsArray.push(char);
+    }
+  });
+
+  console.log(`Repeated: ${repeatedChartsArray}`);
+
+  const alphabet = "aąbcćdeęfghijklłmnńoóprsśtuwyzźż";
+
+  for (let i = 0; alphabet.length > i; i++) {
+    if (!sentence.toLowerCase().includes(alphabet[i])) {
+      return false;
+    }
+  }
+  return true;
+}
 
 /* Weryfikacja */
 

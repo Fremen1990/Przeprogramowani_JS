@@ -25,13 +25,12 @@ const emojiMappings = {
 };
 
 function useEmoji(input) {
-  let newInput = input;
-  for (let [word, emoji] of Object.entries(emojiMappings)) {
-    // destrukturyzacja obiektu wewnątrz pętli for- rozbicie obiektu na slowa i emotkil
-    let expression = new RegExp(word, "gi"); // budowa konstruktowa new RegExp(wzór, "flaga np 'gi' - g-global i-ignore capital letters")  dzieki RegExp zamieni się każde słowo zawierające, jeśli byłoby to string to tylko pierwsze napotkane
-    newInput = newInput.replace(expression, emoji);
+  nowyjinput = input;
+  for (let [solowo, emojo] of Object.entries(emojiMappings)) {
+    let regexpo = new RegExp(solowo, "gi");
+    nowyjinput = nowyjinput.replace(regexpo, emojo);
   }
-  return newInput;
+  return nowyjinput;
 }
 
 /* Weryfikacja */

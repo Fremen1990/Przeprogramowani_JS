@@ -31,7 +31,12 @@
  * spełnia tego warunku, funkcja powinna rzucić wyjątek.
  */
 
-function withPrefix(prefix) {}
+function withPrefix(prefix) {
+  const newFunctionWithPrefix = (name) => {
+    return `${prefix}${name}`;
+  };
+  return newFunctionWithPrefix;
+}
 
 /* Weryfikacja */
 
